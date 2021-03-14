@@ -1,0 +1,27 @@
+spring:
+    application:
+        name: bowling
+    jpa:
+        hibernate:
+            ddl-auto: none
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        show-sql: true
+        properties:
+            hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+            hibernate.id.new_generator_mappings: false
+    datasource:
+        jdbcUrl: jdbc:mysql://localhost:3306/test?useSSL=false
+        username: root
+        password: password
+        driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+    config: classpath:logback.xml
+server:
+    servlet:
+        context-path: /bowling
+    port: 9300
+swagger:
+    enabled: true
+
